@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Нэвтрэх</title>
+    <title>Бүртгүүлэх</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <meta name="description" content="Бүртгүүлэх, шинэ хэрэглэгчийн бүртгэл үүсгэх">
@@ -22,13 +22,20 @@
             <a href="cart.html">
                 <img src="cart-icon.png" alt="Cart">
             </a>
+            <button>Sign Out</button>
         </section>
 </header>
 
     <main class="container">
         <section class="registration-form">
-            <h1>Нэвтрэх</h1>
+            <h1>Бүртгүүлэх</h1>
             <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="username">
+                        <span class="icon-user" aria-hidden="true"></span>
+                        <input type="text" id="username" name="username" placeholder="Нэр" required>
+                    </label>
+                </div>
                 <div class="form-group">
                     <label for="email">
                         <span class="icon-email" aria-hidden="true"></span>
@@ -39,12 +46,19 @@
                     <label for="password">
                         <span class="icon-password" aria-hidden="true"></span>
                         <input type="password" id="password" name="password" placeholder="Нууц үг" required>
-                        <button type="button" class="toggle-password"></button>
+                        <button type="button" class="toggle-password" aria-label="Нууц үг харуулах эсвэл нуух"></button>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">
+                        <span class="icon-password" aria-hidden="true"></span>
+                        <input type="password" id="confirm-password" name="confirm-password" placeholder="Нууц үг бататгах" required>
+                        <button type="button" class="toggle-password" aria-label="Нууц үг бататгах харуулах эсвэл нуух"></button>
                     </label>
                 </div>
                 <button type="submit" class="submit-button">Бүртгүүлэх</button>
             </form>
-            <p>Нууц үгээ мартсан бол <a href="#">энд дарна уу</a></p>
+            <p>Бүртгэлтэй бол <a href="#">энд нэвтэрнэ үү</a></p>
         </section>
     </main>
 
