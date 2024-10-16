@@ -3,199 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Home Page</title>
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <img src="logo.png" alt="Logo">
-        </a>
-        <nav>
-            <a href="order.html">Дэлгүүр</a>
-            <a href="page2.html">Бидний тухай</a>
-            <a href="page3.html">Холбогдох</a>
+    <header class="header">
+        <a href="#default" class="logo">CompanyLogo</a>
+        <nav class="header-right">
+          <a class="active" href="#home">Home</a>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
         </nav>
-        <section>
-            <a href="cart.html">
-                <img src="cart-icon.png" alt="Cart">
-            </a>
-            <button>Гарах</button>
-        </section>
-</header> 
-    <input type="text" placeholder="Search">
-
-    <section>
-        <header>
-            <small>Б Е С Т С Е Л Л Е Р</small>
-            <h1>Cloud Computing</h1>
-            <p>Michael Miller &nbsp;&nbsp;|&nbsp;&nbsp; Web Development</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit tincidunt in pharetra non faucibus consectetur nunc arcu, nisl.</p>
-            <p><strong>19000₮</strong> <s>26000₮</s></p>
-            <button>Авах</button>
-            <button>Дэлгэрэнгүй</button>
-        </header>
+    </header> 
     
-        <figure>
-            <img src="cloud_computing.jpg" alt="Cloud Computing Book Cover">
-        </figure>
+    <div class="input-box">
+        <i class="uil uil-search"></i>
+        <input type="text" placeholder="Search here..." />
+        <button class="button">Search</button>
+      </div>
     
-        <section>
-            <h3>Бусад номнууд</h3>
-            <article>
-                <figure>
-                    <img src="book1.jpg" alt="Algorithms 4th Edition">
-                    <figcaption>
-                        <p>Algorithms 4th Edition</p>
-                        <p>20000₮</p>
-                        <p>★★★★★</p>
-                    </figcaption>
-                </figure>
-                <figure>
-                    <img src="book2.jpg" alt="Introduction to Information Technology">
-                    <figcaption>
-                        <p>Information Technology</p>
-                        <p>Sanjay Saxena</p>
-                        <p>20000₮</p>
-                        <p>★★★★★</p>
-                    </figcaption>
-                </figure>
-                <figure>
-                    <img src="book3.jpg" alt="Computer Systems">
-                    <figcaption>
-                        <p>Computer Systems</p>
-                        <p>Bryant O'Hallaron</p>
-                        <p>20000₮</p>
-                        <p>★★★★★</p>
-                    </figcaption>
-                </figure>
-                <figure>
-                    <img src="book4.jpg" alt="Computer Networks">
-                    <figcaption>
-                        <p>Computer Networks</p>
-                        <p>Kurose Ross</p>
-                        <p>20000₮</p>
-                        <p>★★★★★</p>
-                    </figcaption>
-                </figure>
-            </article>
-        </section>
-    </section>
-    
-    <section>
-        <header>
-            <h2>Танд зөвлөх номнууд</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-        </header>
-    
-        <article>
-            <figure>
-                <img src="book1.jpg" alt="Computer Networking Book Cover">
-                <figcaption>Comp Networks</figcaption>
-                <footer>
-                    <button>Сагслах</button>
-                    <span>20000₮</span>
-                </footer>
-            </figure>
-    
-            <figure>
-                <img src="book2.jpg" alt="Discrete Mathematics Book Cover">
-                <figcaption>Discrete Math</figcaption>
-                <footer>
-                    <button>Сагслах</button>
-                    <span>20000₮</span>
-                </footer>
-            </figure>
-    
-            <figure>
-                <img src="book3.jpg" alt="Introduction to Information Technology Book Cover">
-                <figcaption>Information Tech</figcaption>
-                <footer>
-                    <button>Сагслах</button>
-                    <span>20000₮</span>
-                </footer>
-            </figure>
-    
-            <figure>
-                <img src="book4.jpg" alt="Computer Systems Book Cover">
-                <figcaption>Comp Systems</figcaption>
-                <footer>
-                    <button>Сагслах</button>
-                    <span>20000₮</span>
-                </footer>
-            </figure>
-        </article>
-    </section>
-    
-<section>
-    <section>
-        <article>
-            <img src="fast-delivery-icon.png" alt="Fast Delivery">
-            <h2>Хурдан хүргэлт</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-        </article>
+            <!-- Bestseller section -->
+            <div class="bestseller-section">
+                <div class="bestseller-info">
+                    <h2>Cloud Computing</h2>
+                    <p>Michael Miller | Web Development</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div class="price">
+                        19,000₮
+                        <span class="old-price">26,000₮</span>
+                    </div>
+                    <div class="buttons">
+                        <button>Авax</button>
+                        <button>Дэлгэрэнгүй</button>
+                    </div>
+                </div>
+                <div class="bestseller-cover"></div>
+            </div>
         
-        <article>
-            <img src="secure-payment-icon.png" alt="Secure Payment">
-            <h2>Аюулгүй гүйлгээ</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-        </article>
+            <!-- Scrollable section for other books -->
+            <div class="scroll-section">
+                <!-- Book 1 -->
+                <div class="book-item">
+                    <div class="book-cover"></div>
+                    <div class="book-info">
+                        <h4>Book Title 1</h4>
+                        <p>Author Name</p>
+                        <div class="rating">★★★★★</div>
+                        <div class="price">20,000₮</div>
+                    </div>
+                </div>
         
-        <article>
-            <img src="best-quality-icon.png" alt="Best Quality">
-            <h2>Хамгийн сайн чанар</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-        </article>
+                <!-- Book 2 -->
+                <div class="book-item">
+                    <div class="book-cover"></div>
+                    <div class="book-info">
+                        <h4>Book Title 2</h4>
+                        <p>Author Name</p>
+                        <div class="rating">★★★★☆</div>
+                        <div class="price">18,000₮</div>
+                    </div>
+                </div>
         
-        <article>
-            <img src="return-icon.png" alt="Easy Return">
-            <h2>Буцаалт өгнө</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
-        </article>
-    </section>
-    
-</section>    
-    <footer>
-        <section>
-            <h1>Lorem Ipsum</h1>
-            <input type="text" placeholder="Email">
-            <button>Register</button>
-        </section>
-        <article>
-            <section>
-                <h2>Company name</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
+                <!-- Book 3 -->
+                <div class="book-item">
+                    <div class="book-cover"></div>
+                    <div class="book-info">
+                        <h4>Book Title 3</h4>
+                        <p>Author Name</p>
+                        <div class="rating">★★★★★</div>
+                        <div class="price">22,000₮</div>
+                    </div>
+                </div>
+        
+                <!-- Book 4 -->
+                <div class="book-item">
+                    <div class="book-cover"></div>
+                    <div class="book-info">
+                        <h4>Book Title 4</h4>
+                        <p>Author Name</p>
+                        <div class="rating">★★★☆☆</div>
+                        <div class="price">15,000₮</div>
+                    </div>
+                </div>
+        
+                <!-- Book 5 -->
+                <div class="book-item">
+                    <div class="book-cover"></div>
+                    <div class="book-info">
+                        <h4>Book Title 5</h4>
+                        <p>Author Name</p>
+                        <div class="rating">★★★★☆</div>
+                        <div class="price">19,000₮</div>
+                    </div>
+                </div>
+        
+                <!-- Book 6 -->
+                <div class="book-item">
+                    <div class="book-cover"></div>
+                    <div class="book-info">
+                        <h4>Book Title 6</h4>
+                        <p>Author Name</p>
+                        <div class="rating">★★★★★</div>
+                        <div class="price">21,000₮</div>
+                    </div>
+                </div>
+        
+                <!-- Book 7 -->
+                <div class="book-item">
+                    <div class="book-cover"></div>
+                    <div class="book-info">
+                        <h4>Book Title 7</h4>
+                        <p>Author Name</p>
+                        <div class="rating">★★★☆☆</div>
+                        <div class="price">17,000₮</div>
+                    </div>
+                </div>
+        
+            </div>
+        
+                <section class="book-section">
+                    <h2>Танд зөвлөх номнууд</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="book-grid">
+                        <div class="book-item">
+                            <div class="book-cover" style="background-color: #9C9EFE;"></div>
+                            <h4>Comp Networks</h4>
+                            <p>20000₮</p>
+                            <button>Сагслах</button>
+                        </div>
+                        <div class="book-item">
+                            <div class="book-cover" style="background-color: #6D5BA4;"></div>
+                            <h4>Discrete Math</h4>
+                            <p>20000₮</p>
+                            <button>Сагслах</button>
+                        </div>
+                        <div class="book-item">
+                            <div class="book-cover" style="background-color: #4B8B8B;"></div>
+                            <h4>Information Tech</h4>
+                            <p>20000₮</p>
+                            <button>Сагслах</button>
+                        </div>
+                        <div class="book-item">
+                            <div class="book-cover" style="background-color: #B8A684;"></div>
+                            <h4>Comp Systems</h4>
+                            <p>20000₮</p>
+                            <button>Сагслах</button>
+                        </div>
+                    </div>
+                </section>
+            </body>
+            </html>
+            
+            <section class="features-section">
+                <div class="feature-item">
+                    <div class="icon" style="background-color: #E0E0E0;">
+                        <span>⚡</span>
+                    </div>
+                    <h4>Хурдан хүргэлт</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon" style="background-color: #E0E0E0;">
+                        <span>✔️</span>
+                    </div>
+                    <h4>Аюулгүй гүйлгээ</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon" style="background-color: #E0E0E0;">
+                        <span>⭐</span>
+                    </div>
+                    <h4>Хамгийн сайн чанар</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon" style="background-color: #E0E0E0;">
+                        <span>👍</span>
+                    </div>
+                    <h4>Буцаалт өгнө</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </div>
             </section>
     
-            <nav>
-                <h2>Products</h2>
-                <ul>
-                    <li><a href="#">MDBootstrap</a></li>
-                    <li><a href="#">MDWordPress</a></li>
-                    <li><a href="#">BrandFlow</a></li>
-                    <li><a href="#">Bootstrap Angular</a></li>
-                </ul>
-            </nav>
-    
-            <nav>
-                <h2>Useful links</h2>
-                <ul>
-                    <li><a href="#">Your Account</a></li>
-                    <li><a href="#">Become an Affiliate</a></li>
-                    <li><a href="#">Shipping Rates</a></li>
-                    <li><a href="#">Help</a></li>
-                </ul>
-            </nav>
-    
-            <address>
-                <h2>Contact</h2>
-                <p><img src="logo.png" alt="Logo">New York, NY 10012, US</p>
-                <p><img src="logo.png" alt="Logo">info@gmail.com</p>
-                <p><img src="logo.png" alt="Logo">+ 01 234 567 88</p>
-                <p><img src="logo.png" alt="Logo">+ 01 234 567 89</p>
-            </address>
-        </article>
-    </footer>
+</section>    
+<footer class="footer">
+    <div class="footer-row">
+      <section class="footer-col">
+        <h4>Info</h4>
+        <nav>
+          <ul class="links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Compressions</a></li>
+            <li><a href="#">Customers</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Collection</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="footer-col">
+        <h4>Explore</h4>
+        <nav>
+          <ul class="links">
+            <li><a href="#">Free Designs</a></li>
+            <li><a href="#">Latest Designs</a></li>
+            <li><a href="#">Themes</a></li>
+            <li><a href="#">Popular Designs</a></li>
+            <li><a href="#">Art Skills</a></li>
+            <li><a href="#">New Uploads</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="footer-col">
+        <h4>Legal</h4>
+        <nav>
+          <ul class="links">
+            <li><a href="#">Customer Agreement</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">GDPR</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Media Kit</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="footer-col">
+        <h4>Newsletter</h4>
+        <p>
+          Subscribe to our newsletter for a weekly dose of news, updates,
+          helpful tips, and exclusive offers.
+        </p>
+        <form action="#">
+          <input type="text" placeholder="Your email" required />
+          <button type="submit">SUBSCRIBE</button>
+        </form>
+        <div class="icons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-github"></i>
+        </div>
+      </section>
+    </div>
+  </footer>
 </body>
 </html>
