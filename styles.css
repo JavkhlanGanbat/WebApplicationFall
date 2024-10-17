@@ -34,10 +34,11 @@ body {
     padding: 0.75rem 1rem;
     text-decoration: none;
     font-size: 1rem;
-    border-radius: 0.25rem;
     transition: background-color 0.3s ease;
 }
-
+.links a{
+    border-radius: 0.25rem;
+}
 .header a.logo {
     font-size: 1.5rem;
     font-weight: bold;
@@ -55,8 +56,26 @@ body {
 .header-right {
     display: flex;
     gap: 1rem;
+    align-items: center;
 }
 
+.profile-picture {
+    display: inline-block;
+    width: 40px;                /* Fixed width */
+    height: 40px;               /* Fixed height */
+    background-color: #686cf6; 
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Override styles specifically for the profile picture link */
+.profile-picture {
+    border-radius: 50%; /* Ensure it remains circular */
+}
+
+.profile-picture:hover {
+    background-color: #5053d3;  /* Darker color on hover */
+}
 @media screen and (max-width: 500px) {
     .header {
         flex-direction: column;
