@@ -3,185 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Дискрет математик, түүний хэрэглээ</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <meta name="description" content="Дискрет математик номын танилцуулга, үнэлгээ, болон бусад мэдээлэл">
+    <title>Cloud Computing Books</title>
+    <link rel="stylesheet" href="info.css">
 </head>
 <body>
-    <header>
-        <a href="index.html">
-            <img src="logo.png" alt="Logo">
-        </a>
-        <nav>
-            <a href="order.html">Дэлгүүр</a>
-            <a href="page2.html">Бидний тухай</a>
-            <a href="page3.html">Холбогдох</a>
-        </nav>
-        <section>
-            <a href="cart.html">
-                <img src="cart-icon.png" alt="Cart">
-            </a>
-            <button>Гарах</button>
-        </section>
-</header>
+  <header class="header">
+    <a href="#default" class="logo">CompanyLogo</a>
+    <nav class="header-right">
+      <a class="active" href="#home">Home</a>
+      <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+    </nav>
+</header> 
 
-    <main>
-        <section class="product-details container">
-            <div class="product-image">
-                <img src="book-cover.png" alt="Дискрет математик, түүний хэрэглээ ном">
-            </div>
-            <div class="product-info">
-                <h1>Дискрет математик, түүний хэрэглээ</h1>
-                <p>Сурах бичиг</p>
-                <p class="price">15000₮ <span class="original-price">30000₮</span> <span class="discount">50%</span></p>
-                <div class="quantity">
-                    <button>-</button>
-                    <input type="number" value="3" aria-label="Ширхэг сонгох">
-                    <button>+</button>
-                </div>
-                <button class="add-to-cart">Сагсанд</button>
-            </div>
-        </section>
+<div class="input-box">
+    <i class="uil uil-search"></i>
+    <input type="text" placeholder="Search here..." />
+    <button class="button">Search</button>
+  </div>
 
-        <section class="description container">
-            <h2>Тодорхойлолт</h2>
-            <p>Lorem ipsum is simply dummy text of the printing and typesetting industry...</p>
-        </section>
+  <main>
+    <section class="book-grid">
+        <!-- Repeat this block for each book (9 total) -->
+        <article class="book-item">
+            <div class="book-cover"></div>
+            <h3>Lorem</h3>
+            <p>Placeholder text placeholder text</p>
+            <p class="price">
+                <span class="discounted">19000₮</span>
+                <span class="original">25000₮</span>
+            </p>
+            <button>Сагслах</button>
+        </article>
 
-        <section class="reviews container">
-            <div class="rating">
-                <img src="star-rating.png" alt="5 одоос 5" class="stars">
-                <p>5.0 <span>(388)</span></p>
-            </div>
-            <div class="ratings-bar">
-                <div class="rating-bar"><span>1 ★</span><progress max="100" value="100"></progress><span>(388)</span></div>
-                <div class="rating-bar"><span>2 ★</span><progress max="100" value="0"></progress><span>(0)</span></div>
-            </div>
-            <button class="write-review">Сэтгэгдэл бичих</button>
-            <textarea placeholder="Энд бичнэ үү"></textarea>
-        </section>
+        <!-- 9 Books -->
+        <article class="book-item">
+            <div class="book-cover"></div>
+            <h3>Lorem</h3>
+            <p>Placeholder text placeholder text</p>
+            <p class="price">
+                <span class="discounted">19000₮</span>
+                <span class="original">25000₮</span>
+            </p>
+            <button>Сагслах</button>
+        </article>
 
-        <section class="user-reviews container">
-            <div class="review">
-                <p>Lorem ipsum dolor sit amet...</p>
-                <p class="review-author">Loremipsum</p>
-            </div>
-            <!-- Additional review items as needed -->
+        <article class="book-item">
+            <div class="book-cover"></div>
+            <h3>Lorem</h3>
+            <p>Placeholder text placeholder text</p>
+            <p class="price">
+                <span class="discounted">19000₮</span>
+                <span class="original">25000₮</span>
+            </p>
+            <button>Сагслах</button>
+        </article>
+
+        <article class="book-item">
+            <div class="book-cover"></div>
+            <h3>Lorem</h3>
+            <p>Placeholder text placeholder text</p>
+            <p class="price">
+                <span class="discounted">19000₮</span>
+                <span class="original">25000₮</span>
+            </p>
+            <button>Сагслах</button>
+        </article>
+
+        <article class="book-item">
+            <div class="book-cover"></div>
+            <h3>Lorem</h3>
+            <p>Placeholder text placeholder text</p>
+            <p class="price">
+                <span class="discounted">19000₮</span>
+                <span class="original">25000₮</span>
+            </p>
+            <button>Сагслах</button>
+        </article>
+
+        <article class="book-item">
+            <div class="book-cover"></div>
+            <h3>Lorem</h3>
+            <p>Placeholder text placeholder text</p>
+            <p class="price">
+                <span class="discounted">19000₮</span>
+                <span class="original">25000₮</span>
+            </p>
+            <button>Сагслах</button>
+        </article>
+
+        <article class="book-item">
+            <div class="book-cover"></div>
+            <h3>Lorem</h3>
+            <p>Placeholder text placeholder text</p>
+            <p class="price">
+                <span class="discounted">19000₮</span>
+                <span class="original">25000₮</span>
+            </p>
+            <button>Сагслах</button>
+        </article>
+
+        <article class="book-item">
+            <div class="book-cover"></div>
+            <h3>Lorem</h3>
+            <p>Placeholder text placeholder text</p>
+            <p class="price">
+                <span class="discounted">19000₮</span>
+                <span class="original">25000₮</span>
+            </p>
+            <button>Сагслах</button>
+        </article>
+
+        <article class="book-item">
+            <div class="book-cover"></div>
+            <h3>Lorem</h3>
+            <p>Placeholder text placeholder text</p>
+            <p class="price">
+                <span class="discounted">19000₮</span>
+                <span class="original">25000₮</span>
+            </p>
+            <button>Сагслах</button>
+        </article>
+    </section>
+</main>
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#">1</a>
+  <a class="active" href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">&raquo;</a>
+</div>
+    <footer class="footer">
+      <div class="footer-row">
+        <section class="footer-col">
+          <h4>Info</h4>
+          <nav>
+            <ul class="links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Compressions</a></li>
+              <li><a href="#">Customers</a></li>
+              <li><a href="#">Service</a></li>
+              <li><a href="#">Collection</a></li>
+            </ul>
+          </nav>
         </section>
-    </main>
-    <section class="comments-section">
-        <article class="comment">
-          <img src="profile-pic.jpg" alt="User Profile Picture" class="profile-pic">
-          <h4 class="user-name">John P</h4>
-          <p class="user-rating">
-            <span class="star">★</span><span class="star">★</span>
-            <span class="star">★</span><span class="star">★</span>
-            <span class="star">☆</span>
-          </p>
-          <p class="comment-text">This product is amazing! It exceeded my expectations and I would definitely recommend it to others.</p>
-        </article>
-      
-        <article class="comment">
-          <img src="profile-pic2.jpg" alt="User Profile Picture" class="profile-pic">
-          <h4 class="user-name">Jane Smith</h4>
-          <p class="user-rating">
-            <span class="star">★</span><span class="star">★</span>
-            <span class="star">★</span><span class="star">☆</span>
-            <span class="star">☆</span>
-          </p>
-          <p class="comment-text">The product is decent but could use some improvements in quality.</p>
-        </article>
-      </section>
-      <section class="comments-section">
-        <article class="comment">
-          <img src="profile-pic.jpg" alt="User Profile Picture" class="profile-pic">
-          <h4 class="user-name">John Doe</h4>
-          <p class="user-rating">
-            <span class="star">★</span><span class="star">★</span>
-            <span class="star">★</span><span class="star">★</span>
-            <span class="star">☆</span>
-          </p>
-          <p class="comment-text">This product is amazing! It exceeded my expectations and I would definitely recommend it to others.</p>
-        </article>
-      
-        <article class="comment">
-          <img src="profile-pic2.jpg" alt="User Profile Picture" class="profile-pic">
-          <h4 class="user-name">Jane Smith</h4>
-          <p class="user-rating">
-            <span class="star">★</span><span class="star">★</span>
-            <span class="star">★</span><span class="star">☆</span>
-            <span class="star">☆</span>
-          </p>
-          <p class="comment-text">The product is decent but could use some improvements in quality.</p>
-        </article>
-      </section>
-      <section class="comments-section">
-        <article class="comment">
-          <img src="profile-pic.jpg" alt="User Profile Picture" class="profile-pic">
-          <h4 class="user-name">John Doe</h4>
-          <p class="user-rating">
-            <span class="star">★</span><span class="star">★</span>
-            <span class="star">★</span><span class="star">★</span>
-            <span class="star">☆</span>
-          </p>
-          <p class="comment-text">This product is amazing! It exceeded my expectations and I would definitely recommend it to others.</p>
-        </article>
-      
-        <article class="comment">
-          <img src="profile-pic2.jpg" alt="User Profile Picture" class="profile-pic">
-          <h4 class="user-name">Jane Smith</h4>
-          <p class="user-rating">
-            <span class="star">★</span><span class="star">★</span>
-            <span class="star">★</span><span class="star">☆</span>
-            <span class="star">☆</span>
-          </p>
-          <p class="comment-text">The product is decent but could use some improvements in quality.</p>
-        </article>
-      </section>
-                  
-    <footer>
-        <section>
-            <h1>Lorem Ipsum</h1>
-            <input type="text" placeholder="Email">
-            <button>Register</button>
+  
+        <section class="footer-col">
+          <h4>Explore</h4>
+          <nav>
+            <ul class="links">
+              <li><a href="#">Free Designs</a></li>
+              <li><a href="#">Latest Designs</a></li>
+              <li><a href="#">Themes</a></li>
+              <li><a href="#">Popular Designs</a></li>
+              <li><a href="#">Art Skills</a></li>
+              <li><a href="#">New Uploads</a></li>
+            </ul>
+          </nav>
         </section>
-        <article>
-            <section>
-                <h2>Company name</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                </p>
-            </section>
-    
-            <nav>
-                <h2>Products</h2>
-                <ul>
-                    <li><a href="#">MDBootstrap</a></li>
-                    <li><a href="#">MDWordPress</a></li>
-                    <li><a href="#">BrandFlow</a></li>
-                    <li><a href="#">Bootstrap Angular</a></li>
-                </ul>
-            </nav>
-    
-            <nav>
-                <h2>Useful links</h2>
-                <ul>
-                    <li><a href="#">Your Account</a></li>
-                    <li><a href="#">Become an Affiliate</a></li>
-                    <li><a href="#">Shipping Rates</a></li>
-                    <li><a href="#">Help</a></li>
-                </ul>
-            </nav>
-    
-            <address>
-                <h2>Contact</h2>
-                <p><img src="logo.png" alt="Logo">New York, NY 10012, US</p>
-                <p><img src="logo.png" alt="Logo">info@gmail.com</p>
-                <p><img src="logo.png" alt="Logo">+ 01 234 567 88</p>
-                <p><img src="logo.png" alt="Logo">+ 01 234 567 89</p>
-            </address>
-        </article>
+  
+        <section class="footer-col">
+          <h4>Legal</h4>
+          <nav>
+            <ul class="links">
+              <li><a href="#">Customer Agreement</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">GDPR</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Media Kit</a></li>
+            </ul>
+          </nav>
+        </section>
+  
+        <section class="footer-col">
+          <h4>Newsletter</h4>
+          <p>
+            Subscribe to our newsletter for a weekly dose of news, updates,
+            helpful tips, and exclusive offers.
+          </p>
+          <form action="#">
+            <input type="text" placeholder="Your email" required />
+            <button type="submit">SUBSCRIBE</button>
+          </form>
+          <div class="icons">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-github"></i>
+          </div>
+        </section>
+      </div>
     </footer>
 </body>
 </html>
