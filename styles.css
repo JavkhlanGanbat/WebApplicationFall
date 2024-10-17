@@ -21,77 +21,110 @@ body {
 
 .header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-between; /* Keeps logo on the left and .header-right on the right */
+    align-items: center; /* Aligns items vertically */
     background-color: #f1f1f1;
-    padding: 1.25rem;
-    width: 100%;
+    padding: 20px 40px ; /* Add padding to the left and right */
+    width: 100vw;
+    box-sizing: border-box;
 }
 
+/* Ensure the header-right stays aligned correctly */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Spacing between profile image and links */
+}
+
+
+/* Style the header links with no padding */
 .header a {
     color: black;
     text-align: center;
-    padding: 0.75rem 1rem;
     text-decoration: none;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+    font-size: 18px;
+    line-height: 25px;
 }
-.links a{
-    border-radius: 0.25rem;
-}
+
+/* Style the logo link */
 .header a.logo {
-    font-size: 1.5rem;
+    font-size: 20px;
     font-weight: bold;
 }
 
+/* Change the text color on hover */
 .header a:hover {
+    color: #686cf6;
+}
+
+/* Style the active/current button */
+.header button.active {
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #686cf6; /* Optional: add background color for active state */
+    border: none; /* Remove default border */
+}
+
+/* Reset default button styling */
+.header button {
+    margin: 0; /* Remove any margin */
+    border: none; /* Ensure no border */
+    background: none; /* Ensure no background */
+}
+
+/* Styling for the profile picture */
+.profile-img {
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #686cf6; /* Border around profile picture */
+    object-fit: cover;
     background-color: #ddd;
+    cursor: pointer;
 }
 
-.header a.active {
-    background-color: #686cf6;
-    color: white;
+/* Ensure the parent link has no padding/margins */
+.header-right a {
+    margin: 0;
+    padding: 0;
 }
 
+/* Change profile picture border color on hover */
+.header-right a:hover .profile-img {
+    border-color: #4e4ec5;
+}
+
+/* Ensure the header-right stays aligned correctly */
 .header-right {
     display: flex;
-    gap: 1rem;
     align-items: center;
+    gap: 20px; /* Spacing between profile image and links */
 }
 
-.profile-picture {
-    display: inline-block;
-    width: 40px;                /* Fixed width */
-    height: 40px;               /* Fixed height */
-    background-color: #686cf6; 
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
 
-/* Override styles specifically for the profile picture link */
-.profile-picture {
-    border-radius: 50%; /* Ensure it remains circular */
-}
-
-.profile-picture:hover {
-    background-color: #5053d3;  /* Darker color on hover */
-}
+/* Add media queries for responsiveness */
 @media screen and (max-width: 500px) {
+    .logo{
+        align-self: center;
+        margin-bottom: 0.5rem;
+    }
     .header {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; /* Stack logo and links vertically */
     }
-
+    .header-right{
+        margin: 0;
+    }
     .header a {
-        padding: 0.5rem 0;
-        width: 100%;
-    }
-
-    .header-right {
-        flex-direction: column;
-        width: 100%;
+        float: none;
+        display: block;
+        text-align: left;
+        align-self: center;
     }
 }
+
 
 .topnav {
     overflow: hidden;
@@ -296,7 +329,7 @@ body {
     margin-top: 1rem;
 }
 
-.bestseller-info button {
+button {
     padding: 0.75rem 1.5rem;
     border: none;
     background-color: #686cf6;
@@ -382,7 +415,7 @@ body {
 
   .input-box {
     position: relative;
-    height: 76px;
+    height: 50px;
     max-width: 900px;
     width: 100%;
     background: #fff;
@@ -429,11 +462,11 @@ body {
   @media screen and (max-width: 500px) {
     .input-box {
       height: 66px;
-      margin: 0 8px;
+      margin: 0;
+
     }
     .input-box i {
-      left: 12px;
-      font-size: 25px;
+      font-size: 18px;
     }
     .input-box input {
       padding: 0 112px 0 50px;
