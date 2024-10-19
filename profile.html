@@ -21,7 +21,6 @@
         <section class="profile-info">
             <div class="profile-picture" onclick="toggleEditIcon()">
                 <img id="profile-img" src="default-profile.png" alt="Profile Picture">
-                <!-- Pen icon initially hidden, will show on click -->
                 <div class="edit-icon">
                     ✏️
                 </div>
@@ -96,18 +95,15 @@
     </main>
 
     <script>
-        // Toggle visibility of the edit icon on click
         function toggleEditIcon() {
             const editIcon = document.querySelector('.edit-icon');
             editIcon.style.display = editIcon.style.display === 'block' ? 'none' : 'block';
         }
 
-        // Function to trigger the hidden file input when pen icon is clicked
         document.querySelector('.edit-icon').addEventListener('click', function() {
             document.getElementById('file-upload').click();
         });
-
-        // Function to preview the image after selection
+        
         function previewImage(event) {
             const reader = new FileReader();
             const imageField = document.getElementById("profile-img");
