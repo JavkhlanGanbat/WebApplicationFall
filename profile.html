@@ -3,47 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Профайл</title>
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="profile.css">
 </head>
 <body>
-
-    <header>
-        <nav>
-            <div>
-                <a href="#"><img src="logo.png" alt="Soudemy Logo"></a>
+    <div class="header">
+        <a href="#default" class="logo">CompanyLogo</a>
+        <div class="header-right">
+          <a href="profile.html">
+          <img src="profile.jpg" class="profile-img"></a>
+          <button class="active" href="#home">Home</button>
+          <a href="#contact">Contact</a>
+          <a href="#about">About</a>
+        </div>
+      </div>
+    <main class="profile">
+        <section class="profile-info">
+            <div class="profile-picture" onclick="toggleEditIcon()">
+                <img id="profile-img" src="default-profile.png" alt="Profile Picture">
+                <!-- Pen icon initially hidden, will show on click -->
+                <div class="edit-icon">
+                    ✏️
+                </div>
             </div>
-            <ul>
-                <li><a href="#">Дэлгүүр</a></li>
-                <li><a href="#">Бидний тухай</a></li>
-                <li><a href="#">Холбогдох</a></li>
-            </ul>
-            <div>
-                <a href="#"><img src="cart-icon.png" alt="Cart"></a>
-                <a href="#"><img src="profile-icon.png" alt="Profile"></a>
-                <button>Гарах</button>
-            </div>
-        </nav>
-    </header>
+            <input type="file" id="file-upload" class="file-upload" accept="image/*" onchange="previewImage(event)">
 
-    <main>
-        <section>
-            <div>
-                <img src="avatar-placeholder.png" alt="Profile Image">
-                <h2>Lorem Ipsum</h2>
-                <p>lorem@gmail.com</p>
+            <div class="profile-details">
+                <h1 class="profile-name">Lorem Ipsum</h1>
+                <p class="profile-email">lorem@gmail.com</p>
             </div>
+            <button class="edit-button">Засах</button>
+        </section>
 
-            <form>
-                <div>
+        <form class="profile-form">
+            <div class="form-row">
+                <div class="form-group">
                     <label for="name">Нэр</label>
                     <input type="text" id="name" placeholder="Нэр">
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="username">Хэрэглэгчийн нэр</label>
                     <input type="text" id="username" placeholder="Хэрэглэгчийн нэр">
                 </div>
+            </div>
 
-                <div>
+            <div class="form-row">
+                <div class="form-group">
                     <label for="gender">Хүйс</label>
                     <select id="gender">
                         <option value="">Хүйс</option>
@@ -51,45 +56,70 @@
                         <option value="female">Эмэгтэй</option>
                     </select>
                 </div>
-                <div>
-                    <label for="payment">Төлбөр</label>
-                    <select id="payment">
-                        <option value="">Төлбөр</option>
-                        <option value="visa">Visa</option>
-                        <option value="mastercard">Mastercard</option>
-                    </select>
-                </div>
-                <div>
+                <div class="form-group">
                     <label for="country">Улс</label>
                     <select id="country">
                         <option value="">Улс</option>
-                        <option value="mn">Монгол</option>
-                        <option value="us">АНУ</option>
+                        <option value="mongolia">Монгол</option>
+                        <option value="usa">АНУ</option>
                     </select>
                 </div>
-                <div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="subscription">Төлбөр</label>
+                    <select id="subscription">
+                        <option value="">Төлбөр</option>
+                        <option value="monthly">Сар бүр</option>
+                        <option value="yearly">Жил бүр</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="address">Хаяг</label>
-                    <select id="address">
-                        <option value="">Хаяг</option>
-                        <option value="city1">Улаанбаатар</option>
-                        <option value="city2">Дархан</option>
-                    </select>
+                    <input type="text" id="address" placeholder="Хаяг">
                 </div>
+            </div>
 
-                <button type="submit">Засах</button>
-            </form>
-
-            <section>
+            <div class="email-section">
                 <h3>Миний имэйл хаяг</h3>
-                <div>
-                    <img src="email-icon.png" alt="Email Icon">
-                    <p>lorem@gmail.com</p>
-                    <small>1 сарын өмнө</small>
+                <div class="email-item">
+                    <div class="email-icon">📧</div>
+                    <div class="email-text">
+                        <span>lorem@gmail.com</span>
+                        <span class="email-time">1 сарын өмнө</span>
+                    </div>
                 </div>
-                <button type="button">+Имэйл хаяг нэмэх</button>
-            </section>
-        </section>
+                <button class="add-email-button">+Имэйл хаяг нэмэх</button>
+            </div>
+        </form>
     </main>
 
+    <script>
+        // Toggle visibility of the edit icon on click
+        function toggleEditIcon() {
+            const editIcon = document.querySelector('.edit-icon');
+            editIcon.style.display = editIcon.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Function to trigger the hidden file input when pen icon is clicked
+        document.querySelector('.edit-icon').addEventListener('click', function() {
+            document.getElementById('file-upload').click();
+        });
+
+        // Function to preview the image after selection
+        function previewImage(event) {
+            const reader = new FileReader();
+            const imageField = document.getElementById("profile-img");
+
+            reader.onload = function() {
+                if (reader.readyState === 2) {
+                    imageField.src = reader.result;
+                }
+            };
+
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
 </body>
 </html>
