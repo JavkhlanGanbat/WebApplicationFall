@@ -411,7 +411,7 @@ button:hover {
 .pagination {
     display: flex;
     justify-content: center;
-    margin: 20px 0; /* Adds top and bottom margin */
+    margin: 20px 0;
 }
 
 .pagination a {
@@ -419,15 +419,15 @@ button:hover {
     float: left;
     padding: 10px 16px;
     text-decoration: none;
-    border-radius: 6px; /* Rounds the corners */
+    border-radius: 6px;
     transition: background-color 0.3s;
-    margin: 0 4px; /* Adds space between pagination items */
-    background-color: #f9f9f9; /* Matches other button colors */
+    margin: 0 4px;
+    background-color: #f9f9f9;
     border: 1px solid #ddd;
 }
 
 .pagination a.active {
-    background-color: #6c63ff; /* Matches active button color */
+    background-color: #6c63ff;
     color: white;
     border: none;
 }
