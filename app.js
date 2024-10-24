@@ -89,7 +89,7 @@ const books = [
 let currentPage = 1;
 const booksPerPage = 9;
 
-// On page load, initialize the page with query parameters
+// Huudas unshigdahad garaanii query parametruudiig olgono
 window.onload = function () {
   const params = new URLSearchParams(window.location.search);
   const category = params.get("cat") || "all";
@@ -106,7 +106,7 @@ function searchBooks() {
   );
   renderBooks(filteredBooks);
 }
-// Render books dynamically
+// Nomnuudiig dynamicaar render hiine
 function renderBooks(bookList) {
   const bookGrid = document.getElementById("book-grid");
   bookGrid.innerHTML = "";
@@ -125,24 +125,23 @@ function renderBooks(bookList) {
           <span class="discounted">${book.discountedPrice}₮</span>
           <span class="original">${book.price}₮</span>
         </p>
-        <p>Category: ${book.category}</p>
+        <p>Ангилал: ${book.category}</p>
         <button>Сагслах</button>
       </article>`;
     bookGrid.innerHTML += bookItem;
   });
 
-  // Render pagination controls
+  // Pag control render
   renderPagination(bookList.length);
 }
 
-// Render pagination controls
 function renderPagination(totalBooks) {
   const pagination = document.querySelector(".pagination");
   pagination.innerHTML = "";
 
   const totalPages = Math.ceil(totalBooks / booksPerPage);
 
-  // Generate pagination HTML
+  // Pagination html
   if (currentPage > 1) {
     pagination.innerHTML += `<a href="#" onclick="changePage(${currentPage - 1})">&laquo;</a>`;
   }
@@ -156,7 +155,7 @@ function renderPagination(totalBooks) {
   }
 }
 
-// Update URL and page when the page changes
+// Huudas uurchlugduhud URL shinechlene
 function changePage(pageNumber) {
   currentPage = pageNumber;
   const params = new URLSearchParams(window.location.search);
@@ -165,7 +164,7 @@ function changePage(pageNumber) {
   filterAndSortBooks(params.get("cat"), params.get("sort"));
 }
 
-// Filter and sort books
+// Nomnuudiig erembeleh, shuuh
 function filterAndSortBooks(category = "all", sort = "default") {
   let filteredBooks = [...books];
 
@@ -182,22 +181,22 @@ function filterAndSortBooks(category = "all", sort = "default") {
   renderBooks(filteredBooks);
 }
 
-// Handle sort
+// Erembeleh
 function sortBooks() {
   const sortValue = document.getElementById("sort-select").value;
   const params = new URLSearchParams(window.location.search);
   params.set("sort", sortValue);
-  params.set("page", 1); // Reset to page 1 when sorting
+  params.set("page", 1);
   window.history.pushState({}, "", `?${params.toString()}`);
   filterAndSortBooks(params.get("cat"), sortValue);
 }
 
-// Handle category filter
+// Shuuh
 function filterByCategory() {
   const categoryValue = document.getElementById("category-select").value;
   const params = new URLSearchParams(window.location.search);
   params.set("cat", categoryValue);
-  params.set("page", 1); // Reset to page 1 when filtering
+  params.set("page", 1);
   window.history.pushState({}, "", `?${params.toString()}`);
   filterAndSortBooks(categoryValue, params.get("sort"));
 }
