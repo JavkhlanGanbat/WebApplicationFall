@@ -15,7 +15,12 @@ body {
     justify-content: flex-start;
     padding-top: 80px;
 }
-
+main{
+    flex-grow: 1;
+    min-height: 30vh; 
+    max-width: 1200px;
+    margin: 0 auto;
+}
 .header {
     display: flex;
     justify-content: space-between;
@@ -325,10 +330,6 @@ body {
       padding: 8px 18px;
     }
   }
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-}
 
 .book-grid {
     display: grid;

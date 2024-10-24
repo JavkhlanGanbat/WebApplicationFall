@@ -11,194 +11,107 @@
     <a href="#default" class="logo">CompanyLogo</a>
     <div class="header-right">
       <a href="profile.html">
-      <img src="profile.jpg" class="profile-img"></a>
+        <img src="profile.jpg" class="profile-img">
+      </a>
       <button class="active" href="#home">Home</button>
       <a href="#contact">Contact</a>
       <a href="#about">About</a>
     </div>
   </div>
 
-<div class="input-box">
-    <i class="uil uil-search"></i>
-    <input type="text" placeholder="Search here..." />
-    <button class="button">Search</button>
+  <!-- Integrated Search Bar with Button -->
+  <div class="input-box">
+    <input type="text" id="search-input" placeholder="Search by title..." />
+    <button onclick="filterBooks()">🔍</button>
+  </div>
+
+  <!-- Sort & Filter Options -->
+  <div class="sort-filter">
+    <label for="sort-select">Sort by:</label>
+    <select id="sort-select" onchange="sortBooks()">
+      <option value="default">Default</option>
+      <option value="asc">Price: Low to High</option>
+      <option value="desc">Price: High to Low</option>
+    </select>
+
+    <label for="category-select">Category:</label>
+    <select id="category-select" onchange="filterByCategory()">
+      <option value="all">All Categories</option>
+      <option value="Cloud Computing">Cloud Computing</option>
+      <option value="Architecture">Architecture</option>
+      <option value="Management">Management</option>
+    </select>
   </div>
 
   <main>
-    <section class="book-grid">
-        <!-- Repeat this block for each book (9 total) -->
-        <article class="book-item">
-            <div class="book-cover"></div>
-            <h3>Lorem</h3>
-            <p>Placeholder text placeholder text</p>
-            <p class="price">
-                <span class="discounted">19000₮</span>
-                <span class="original">25000₮</span>
-            </p>
-            <button>Сагслах</button>
-        </article>
-
-        <!-- 9 Books -->
-        <article class="book-item">
-            <div class="book-cover"></div>
-            <h3>Lorem</h3>
-            <p>Placeholder text placeholder text</p>
-            <p class="price">
-                <span class="discounted">19000₮</span>
-                <span class="original">25000₮</span>
-            </p>
-            <button>Сагслах</button>
-        </article>
-
-        <article class="book-item">
-            <div class="book-cover"></div>
-            <h3>Lorem</h3>
-            <p>Placeholder text placeholder text</p>
-            <p class="price">
-                <span class="discounted">19000₮</span>
-                <span class="original">25000₮</span>
-            </p>
-            <button>Сагслах</button>
-        </article>
-
-        <article class="book-item">
-            <div class="book-cover"></div>
-            <h3>Lorem</h3>
-            <p>Placeholder text placeholder text</p>
-            <p class="price">
-                <span class="discounted">19000₮</span>
-                <span class="original">25000₮</span>
-            </p>
-            <button>Сагслах</button>
-        </article>
-
-        <article class="book-item">
-            <div class="book-cover"></div>
-            <h3>Lorem</h3>
-            <p>Placeholder text placeholder text</p>
-            <p class="price">
-                <span class="discounted">19000₮</span>
-                <span class="original">25000₮</span>
-            </p>
-            <button>Сагслах</button>
-        </article>
-
-        <article class="book-item">
-            <div class="book-cover"></div>
-            <h3>Lorem</h3>
-            <p>Placeholder text placeholder text</p>
-            <p class="price">
-                <span class="discounted">19000₮</span>
-                <span class="original">25000₮</span>
-            </p>
-            <button>Сагслах</button>
-        </article>
-
-        <article class="book-item">
-            <div class="book-cover"></div>
-            <h3>Lorem</h3>
-            <p>Placeholder text placeholder text</p>
-            <p class="price">
-                <span class="discounted">19000₮</span>
-                <span class="original">25000₮</span>
-            </p>
-            <button>Сагслах</button>
-        </article>
-
-        <article class="book-item">
-            <div class="book-cover"></div>
-            <h3>Lorem</h3>
-            <p>Placeholder text placeholder text</p>
-            <p class="price">
-                <span class="discounted">19000₮</span>
-                <span class="original">25000₮</span>
-            </p>
-            <button>Сагслах</button>
-        </article>
-
-        <article class="book-item">
-            <div class="book-cover"></div>
-            <h3>Lorem</h3>
-            <p>Placeholder text placeholder text</p>
-            <p class="price">
-                <span class="discounted">19000₮</span>
-                <span class="original">25000₮</span>
-            </p>
-            <button>Сагслах</button>
-        </article>
+    <section class="book-grid" id="book-grid">
+      <!-- Book items will be injected here via JavaScript -->
     </section>
-</main>
-<div class="pagination">
-  <a href="#">&laquo;</a>
-  <a href="#">1</a>
-  <a class="active" href="#">2</a>
-  <a href="#">3</a>
-  <a href="#">4</a>
-  <a href="#">5</a>
-  <a href="#">6</a>
-  <a href="#">&raquo;</a>
-</div>
-    <footer class="footer">
-      <div class="footer-row">
-        <section class="footer-col">
-          <h4>Info</h4>
-          <nav>
-            <ul class="links">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Compressions</a></li>
-              <li><a href="#">Customers</a></li>
-              <li><a href="#">Service</a></li>
-              <li><a href="#">Collection</a></li>
-            </ul>
-          </nav>
-        </section>
-  
-        <section class="footer-col">
-          <h4>Explore</h4>
-          <nav>
-            <ul class="links">
-              <li><a href="#">Free Designs</a></li>
-              <li><a href="#">Latest Designs</a></li>
-              <li><a href="#">Themes</a></li>
-              <li><a href="#">Popular Designs</a></li>
-              <li><a href="#">Art Skills</a></li>
-              <li><a href="#">New Uploads</a></li>
-            </ul>
-          </nav>
-        </section>
-  
-        <section class="footer-col">
-          <h4>Legal</h4>
-          <nav>
-            <ul class="links">
-              <li><a href="#">Customer Agreement</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">GDPR</a></li>
-              <li><a href="#">Security</a></li>
-              <li><a href="#">Testimonials</a></li>
-              <li><a href="#">Media Kit</a></li>
-            </ul>
-          </nav>
-        </section>
-  
-        <section class="footer-col">
-          <h4>Newsletter</h4>
-          <p>
-            Subscribe to our newsletter for a weekly dose of news, updates,
-            helpful tips, and exclusive offers.
-          </p>
-          <form action="#">
-            <input type="text" placeholder="Your email" required />
-            <button type="submit">SUBSCRIBE</button>
-          </form>
-          <div class="icons">
-            <i class="fa-brands fa-facebook-f"></i>
-            <i class="fa-brands fa-twitter"></i>
-            <i class="fa-brands fa-linkedin"></i>
-            <i class="fa-brands fa-github"></i>
-          </div>
-        </section>
-      </div>
-    </footer>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-row">
+      <section class="footer-col">
+        <h4>Info</h4>
+        <nav>
+          <ul class="links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Compressions</a></li>
+            <li><a href="#">Customers</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Collection</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="footer-col">
+        <h4>Explore</h4>
+        <nav>
+          <ul class="links">
+            <li><a href="#">Free Designs</a></li>
+            <li><a href="#">Latest Designs</a></li>
+            <li><a href="#">Themes</a></li>
+            <li><a href="#">Popular Designs</a></li>
+            <li><a href="#">Art Skills</a></li>
+            <li><a href="#">New Uploads</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="footer-col">
+        <h4>Legal</h4>
+        <nav>
+          <ul class="links">
+            <li><a href="#">Customer Agreement</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">GDPR</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Media Kit</a></li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="footer-col">
+        <h4>Newsletter</h4>
+        <p>
+          Subscribe to our newsletter for a weekly dose of news, updates,
+          helpful tips, and exclusive offers.
+        </p>
+        <form action="#">
+          <input type="text" placeholder="Your email" required />
+          <button type="submit">SUBSCRIBE</button>
+        </form>
+        <div class="icons">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-github"></i>
+        </div>
+      </section>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
