@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cloud Computing Books</title>
-    <link rel="stylesheet" href="info.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Computing Books</title>
+  <link rel="stylesheet" href="info.css">
 </head>
 <body>
   <div class="header">
@@ -36,26 +36,21 @@
     <select id="category-select" onchange="filterByCategory()">
       <option value="all">All Categories</option>
       <option value="Cloud Computing">Cloud Computing</option>
-      <option value="Architecture">Architecture</option>
-      <option value="Management">Management</option>
+      <option value="Mathematics">Mathematics</option>
+      <option value="Operating Systems">Operating Systems</option>
     </select>
   </div>
 
   <main>
     <section class="book-grid" id="book-grid">
-      <!-- Nomnuud JS-eer orj irne -->
+      <!-- Books will be dynamically loaded here -->
     </section>
   </main>
+
   <div class="pagination">
-    <a href="#">&laquo;</a>
-    <a href="#">1</a>
-    <a class="active" href="#">2</a>
-    <a href="#">3</a>
-    <a href="#">4</a>
-    <a href="#">5</a>
-    <a href="#">6</a>
-    <a href="#">&raquo;</a>
+    <!-- Pagination controls will be dynamically rendered here -->
   </div>
+
   <footer class="footer">
     <div class="footer-row">
       <section class="footer-col">
@@ -118,7 +113,7 @@
       </section>
     </div>
   </footer>
-
   <script src="app.js"></script>
+
 </body>
 </html>
