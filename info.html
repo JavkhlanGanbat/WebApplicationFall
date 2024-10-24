@@ -8,24 +8,23 @@
 </head>
 <body>
   <div class="header">
-    <a href="#default" class="logo">CompanyLogo</a>
+    <a href="#default" class="logo">Лого</a>
     <div class="header-right">
       <a href="profile.html">
-        <img src="profile.jpg" class="profile-img">
-      </a>
-      <button class="active" href="#home">Home</button>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
+      <img src="profile.jpg" class="profile-img"></a>
+      <button class="active" href="#home">Гарах</button>
+      <a href="#contact">Холбогдох</a>
+      <a href="#about">Бидний тухай</a>
     </div>
   </div>
 
   <div class="input-box">
-    <input type="text" id="search-input" placeholder="Search by title..." />
-    <button onclick="filterBooks()">Хайх</button>
+    <input type="text" id="search-input" placeholder="Гарчигаар хайх" />
+    <button onclick="searchBooks()">Хайх</button>
   </div>
 
   <div class="sort-filter">
-    <label for="sort-select">Sort by:</label>
+    <label for="sort-select">Эрэмбэлэх:</label>
     <select id="sort-select" onchange="sortBooks()">
       <option value="default">Энгийн</option>
       <option value="asc">Үнэ: Ихээс бага руу</option>
@@ -63,7 +62,8 @@
             <li><a href="#">Үйлчилгээ</a></li>
             <li><a href="#">Цуглуулга</a></li>
           </ul>
-          
+        </nav>
+      </section>
           <section class="footer-col">
             <h4>Судлах</h4>
             <nav>

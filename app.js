@@ -99,7 +99,13 @@ window.onload = function () {
   currentPage = page;
   filterAndSortBooks(category, sort);
 };
-
+function searchBooks() {
+  const searchValue = document.getElementById("search-input").value.toLowerCase();
+  const filteredBooks = books.filter((book) =>
+    book.title.toLowerCase().includes(searchValue)
+  );
+  renderBooks(filteredBooks);
+}
 // Render books dynamically
 function renderBooks(bookList) {
   const bookGrid = document.getElementById("book-grid");
