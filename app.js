@@ -36,12 +36,10 @@ const books = [
     },
   ];
   
-  // Initial book rendering
   window.onload = function () {
     renderBooks(books);
   };
   
-  // Function to render the books dynamically with truncation
   function renderBooks(bookList) {
     const bookGrid = document.getElementById("book-grid");
     bookGrid.innerHTML = ""; // Clear previous content
@@ -63,7 +61,6 @@ const books = [
     });
   }
   
-  // Function to sort books by price
   function sortBooks() {
     const sortValue = document.getElementById("sort-select").value;
     let sortedBooks = [...books];
@@ -77,7 +74,6 @@ const books = [
     renderBooks(sortedBooks);
   }
   
-  // Function to filter books by title
   function filterBooks() {
     const searchValue = document.getElementById("search-input").value.toLowerCase();
     const filteredBooks = books.filter((book) =>
@@ -86,7 +82,6 @@ const books = [
     renderBooks(filteredBooks);
   }
   
-  // Function to filter books by category
   function filterByCategory() {
     const categoryValue = document.getElementById("category-select").value;
     let filteredBooks = books;
