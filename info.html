@@ -19,7 +19,7 @@
   </div>
 
   <div class="input-box">
-    <input type="text" id="search-input" placeholder="Гарчигаар хайх" />
+    <input type="text" id="search-input" oninput="debounceSearch()"placeholder="Номын нэрээр хайх...">
     <button onclick="searchBooks()">Хайх</button>
   </div>
 

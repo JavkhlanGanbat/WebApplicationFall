@@ -85,31 +85,89 @@ const books = [
   }
 ];
 
-// State variables for pagination
 let currentPage = 1;
 const booksPerPage = 9;
 
-// Huudas unshigdahad garaanii query parametruudiig olgono
-window.onload = function () {
-  const params = new URLSearchParams(window.location.search);
-  const category = params.get("cat") || "all";
-  const sort = params.get("sort") || "default";
-  const page = parseInt(params.get("page")) || 1;
+// URL параметрүүдийг шинэчлэх
+function updateURL(params = {}) {
+  const urlParams = new URLSearchParams(window.location.search);
+  
+  // Одоо байгаа параметрүүдийг хадгалах
+  Object.entries(params).forEach(([key, value]) => {
+    if (value === null || value === 'all' && key === 'cat' || value === 'default' && key === 'sort') {
+      urlParams.delete(key);
+    } else {
+      urlParams.set(key, value);
+    }
+  });
 
+  // URL шинэчлэх
+  const newURL = `${window.location.pathname}${urlParams.toString() ? '?' + urlParams.toString() : ''}`;
+  window.history.pushState({}, '', newURL);
+}
+
+// URL-с параметрүүдийг уншиж авах
+function getURLParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    category: params.get('cat') || 'all',
+    sort: params.get('sort') || 'default',
+    page: parseInt(params.get('page')) || 1,
+    search: params.get('search') || ''
+  };
+}
+
+// Хуудас ачаалагдахад
+window.onload = function () {
+  const { category, sort, page, search } = getURLParams();
   currentPage = page;
-  filterAndSortBooks(category, sort);
+  
+  // Search input-д утга оноох
+  const searchInput = document.getElementById('search-input');
+  if (searchInput && search) {
+    searchInput.value = search;
+  }
+  
+  // Select elements-д утга оноох
+  const sortSelect = document.getElementById('sort-select');
+  const categorySelect = document.getElementById('category-select');
+  
+  if (sortSelect) sortSelect.value = sort;
+  if (categorySelect) categorySelect.value = category;
+  
+  filterAndSortBooks(category, sort, search);
 };
+
+// URL өөрчлөгдөхөд
+window.onpopstate = function() {
+  const { category, sort, page, search } = getURLParams();
+  currentPage = page;
+  filterAndSortBooks(category, sort, search);
+};
+
 function searchBooks() {
-  const searchValue = document.getElementById("search-input").value.toLowerCase();
+  const searchValue = document.getElementById('search-input').value.toLowerCase();
+  updateURL({
+    search: searchValue || null,
+    page: 1
+  });
+  
   const filteredBooks = books.filter((book) =>
     book.title.toLowerCase().includes(searchValue)
   );
   renderBooks(filteredBooks);
 }
-// Nomnuudiig dynamicaar render hiine
+
+// Хайлтын debounce функц
+let searchTimeout;
+function debounceSearch() {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(searchBooks, 300);
+}
+
 function renderBooks(bookList) {
-  const bookGrid = document.getElementById("book-grid");
-  bookGrid.innerHTML = "";
+  const bookGrid = document.getElementById('book-grid');
+  bookGrid.innerHTML = '';
 
   const start = (currentPage - 1) * booksPerPage;
   const end = currentPage * booksPerPage;
@@ -126,77 +184,89 @@ function renderBooks(bookList) {
           <span class="original">${book.price}₮</span>
         </p>
         <p>Ангилал: ${book.category}</p>
-        <button>Сагслах</button>
-      </article>`;
+        <button onclick="addToCart(${book.id})">Сагслах</button>
+      </article>
+    `;
     bookGrid.innerHTML += bookItem;
   });
 
-  // Pag control render
   renderPagination(bookList.length);
 }
 
 function renderPagination(totalBooks) {
-  const pagination = document.querySelector(".pagination");
-  pagination.innerHTML = "";
+  const pagination = document.querySelector('.pagination');
+  pagination.innerHTML = '';
 
   const totalPages = Math.ceil(totalBooks / booksPerPage);
 
-  // Pagination html
   if (currentPage > 1) {
-    pagination.innerHTML += `<a href="#" onclick="changePage(${currentPage - 1})">&laquo;</a>`;
+    pagination.innerHTML += `<a href="#" onclick="changePage(${currentPage - 1}); return false;">&laquo;</a>`;
   }
 
   for (let i = 1; i <= totalPages; i++) {
-    pagination.innerHTML += `<a href="#" class="${currentPage === i ? 'active' : ''}" onclick="changePage(${i})">${i}</a>`;
+    pagination.innerHTML += `
+      <a href="#" 
+         class="${currentPage === i ? 'active' : ''}" 
+         onclick="changePage(${i}); return false;">${i}</a>
+    `;
   }
 
   if (currentPage < totalPages) {
-    pagination.innerHTML += `<a href="#" onclick="changePage(${currentPage + 1})">&raquo;</a>`;
+    pagination.innerHTML += `<a href="#" onclick="changePage(${currentPage + 1}); return false;">&raquo;</a>`;
   }
 }
 
-// Huudas uurchlugduhud URL shinechlene
 function changePage(pageNumber) {
   currentPage = pageNumber;
-  const params = new URLSearchParams(window.location.search);
-  params.set("page", pageNumber);
-  window.history.pushState({}, "", `?${params.toString()}`);
-  filterAndSortBooks(params.get("cat"), params.get("sort"));
+  updateURL({ page: pageNumber });
+  
+  const { category, sort, search } = getURLParams();
+  filterAndSortBooks(category, sort, search);
 }
 
-// Nomnuudiig erembeleh, shuuh
-function filterAndSortBooks(category = "all", sort = "default") {
+function filterAndSortBooks(category = 'all', sort = 'default', search = '') {
   let filteredBooks = [...books];
 
-  if (category !== "all") {
+  // Хайлтаар шүүх
+  if (search) {
+    filteredBooks = filteredBooks.filter(book => 
+      book.title.toLowerCase().includes(search.toLowerCase())
+    );
+  }
+
+  // Ангилалаар шүүх
+  if (category !== 'all') {
     filteredBooks = filteredBooks.filter(book => book.category === category);
   }
 
-  if (sort === "asc") {
+  // Эрэмбэлэх
+  if (sort === 'asc') {
     filteredBooks.sort((a, b) => a.discountedPrice - b.discountedPrice);
-  } else if (sort === "desc") {
+  } else if (sort === 'desc') {
     filteredBooks.sort((a, b) => b.discountedPrice - a.discountedPrice);
   }
 
   renderBooks(filteredBooks);
 }
 
-// Erembeleh
 function sortBooks() {
-  const sortValue = document.getElementById("sort-select").value;
-  const params = new URLSearchParams(window.location.search);
-  params.set("sort", sortValue);
-  params.set("page", 1);
-  window.history.pushState({}, "", `?${params.toString()}`);
-  filterAndSortBooks(params.get("cat"), sortValue);
+  const sortValue = document.getElementById('sort-select').value;
+  updateURL({
+    sort: sortValue,
+    page: 1
+  });
+  
+  const { category, search } = getURLParams();
+  filterAndSortBooks(category, sortValue, search);
 }
 
-// Shuuh
 function filterByCategory() {
-  const categoryValue = document.getElementById("category-select").value;
-  const params = new URLSearchParams(window.location.search);
-  params.set("cat", categoryValue);
-  params.set("page", 1);
-  window.history.pushState({}, "", `?${params.toString()}`);
-  filterAndSortBooks(categoryValue, params.get("sort"));
+  const categoryValue = document.getElementById('category-select').value;
+  updateURL({
+    cat: categoryValue,
+    page: 1
+  });
+  
+  const { sort, search } = getURLParams();
+  filterAndSortBooks(categoryValue, sort, search);
 }
