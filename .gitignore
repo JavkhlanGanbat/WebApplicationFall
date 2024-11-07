@@ -1,0 +1,32 @@
+# Node.js dependencies
+/node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables (important to avoid exposing sensitive info)
+.env
+
+# OS files (macOS, Windows, Linux)
+.DS_Store
+Thumbs.db
+
+# IDE files (e.g., VSCode, JetBrains)
+.vscode/
+.idea/
+
+# Build output (if you have a build process)
+dist/
+build/
+
+# npm package lock file (optional, but recommended for better version control)
+package-lock.json
+
+# Test coverage (if using tools like Jest or Mocha)
+coverage/
+
+# Miscellaneous
+*.swp   # Swap files (if using vim or other text editors)
