@@ -446,3 +446,31 @@
       width: 100%;
     }
   }
+  #cart-container {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    width: 300px;
+    padding: 15px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  
+  .cart-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .cart-item h3 {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  .cart-item p {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  

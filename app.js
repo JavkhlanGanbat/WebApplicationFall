@@ -175,17 +175,17 @@ function renderBooks(bookList) {
 
   paginatedBooks.forEach((book) => {
     const bookItem = `
-      <article class="book-item" style="width: 200px; overflow: hidden;">
-        <div class="book-cover" style="height: 200px; background: #f0f0f0;"></div>
-        <h3 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${book.title}</h3>
-        <p style="height: 40px; overflow: hidden; text-overflow: ellipsis;">${book.description}</p>
-        <p class="price">
-          <span class="discounted">${book.discountedPrice}₮</span>
-          <span class="original">${book.price}₮</span>
-        </p>
-        <p>Ангилал: ${book.category}</p>
-        <button onclick="addToCart(${book.id})">Сагслах</button>
-      </article>
+    <article class="book-item" style="width: 200px; overflow: hidden;">
+      <div class="book-cover" style="height: 200px; background: #f0f0f0;"></div>
+      <h3 style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${book.title}</h3>
+      <p style="height: 40px; overflow: hidden; text-overflow: ellipsis;">${book.description}</p>
+      <p class="price">
+        <span class="discounted">${book.discountedPrice}₮</span>
+        <span class="original">${book.price}₮</span>
+      </p>
+      <p>Ангилал: ${book.category}</p>
+      <button onclick="addToCart('${book.title}')">Сагслах</button>
+    </article>
     `;
     bookGrid.innerHTML += bookItem;
   });
@@ -269,4 +269,39 @@ function filterByCategory() {
   
   const { sort, search } = getURLParams();
   filterAndSortBooks(categoryValue, sort, search);
+}
+const cart = [];
+
+function addToCart(bookTitle) {
+  const book = books.find(b => b.title === bookTitle);
+  if (book) {
+    cart.push(book);
+    document.getElementById('cart-count').textContent = cart.length;
+    renderCart();
+  }
+}
+
+function updateCartCount() {
+  const cartCount = document.getElementById('cart-count');
+  cartCount.textContent = cart.length;
+}
+
+function renderCart() {
+  const cartContainer = document.getElementById('cart-container');
+  cartContainer.innerHTML = `
+    <h2>Сагс</h2>
+    ${cart.map(book => `
+      <div class="cart-item">
+        <h3>${book.title}</h3>
+        <p>Хямдарсан үнэ: ${book.discountedPrice}₮</p>
+        <p>Үндсэн үнэ: ${book.price}₮</p>
+      </div>
+    `).join('')}
+  `;
+  cartContainer.style.display = cart.length > 0 ? 'block' : 'none';
+}
+
+function toggleCart() {
+  const cartContainer = document.getElementById('cart-container');
+  cartContainer.style.display = cartContainer.style.display === 'none' ? 'block' : 'none';
 }
