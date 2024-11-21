@@ -7,18 +7,7 @@
   <link rel="stylesheet" href="info.css">
 </head>
 <body>
-  <div class="header">
-    <a href="#default" class="logo">Лого</a>
-    <div class="header-right">
-      <a href="profile.html">
-      <img src="profile.jpg" class="profile-img"></a>
-      <button class="active" href="#home">Гарах</button>
-      <a href="#contact">Холбогдох</a>
-      <a href="#about">Бидний тухай</a>
-      <button onclick="toggleCart()">Сагс харах (<span id="cart-count">0</span>)</button>
-    </div>
-  </div>
-  
+  <header-component></header-component>
   <div id="cart-container" style="display: none;">
     <h2>Cart Items</h2>
     <!-- Cart items will be rendered here -->
@@ -56,68 +45,11 @@
     <!-- Pagination controls will be dynamically rendered here -->
   </div>
 
-  <footer class="footer">
-    <div class="footer-row">
-      <section class="footer-col">
-        <h4>Info</h4>
-        <nav>
-          <ul class="links">
-            <li><a href="#">Бидний тухай</a></li>
-            <li><a href="#">Шахалтууд</a></li>
-            <li><a href="#">Үйлчлүүлэгчид</a></li>
-            <li><a href="#">Үйлчилгээ</a></li>
-            <li><a href="#">Цуглуулга</a></li>
-          </ul>
-        </nav>
-      </section>
-          <section class="footer-col">
-            <h4>Судлах</h4>
-            <nav>
-              <ul class="links">
-                <li><a href="#">Үнэгүй Дизайнууд</a></li>
-                <li><a href="#">Сүүлийн Дизайнууд</a></li>
-                <li><a href="#">Загварууд</a></li>
-                <li><a href="#">Алдартай Дизайнууд</a></li>
-                <li><a href="#">Шинээр нэмэгдсэн</a></li>
-              </ul>
-            </nav>
-          </section>
-          
-          <section class="footer-col">
-            <h4>Хууль эрх зүй</h4>
-            <nav>
-              <ul class="links">
-                <li><a href="#">Хэрэглэгчийн Гэрээ</a></li>
-                <li><a href="#">Нууцлалын Бодлого</a></li>
-                <li><a href="#">Аюулгүй байдал</a></li>
-                <li><a href="#">Сэтгэгдлүүд</a></li>
-                <li><a href="#">Медиа Багц</a></li>
-              </ul>
-            </nav>
-          </section>
-        </nav>
-      </section>
-
-      <section class="footer-col">
-        <h4>Зар мэдээ</h4>
-        <p>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. A accusamus temporibus numquam, 
-          facilis iusto ipsum sequi, fuga est qui quasi rem architecto optio aperiam assumenda.
-        </p>
-        <form action="#">
-          <input type="text" placeholder="Your email" required />
-          <button type="submit">SUBSCRIBE</button>
-        </form>
-        <div class="icons">
-          <i class="fa-brands fa-facebook-f"></i>
-          <i class="fa-brands fa-twitter"></i>
-          <i class="fa-brands fa-linkedin"></i>
-          <i class="fa-brands fa-github"></i>
-        </div>
-      </section>
-    </div>
-  </footer>
+  <footer-component></footer-component>
+  
   <script src="app.js"></script>
+  <script src="footer.js"></script>
+  <script src="header.js"></script>
 
 </body>
 </html>
