@@ -293,8 +293,7 @@ function renderCart() {
     ${cart.map(book => `
       <div class="cart-item">
         <h3>${book.title}</h3>
-        <p>Хямдарсан үнэ: ${book.discountedPrice}₮</p>
-        <p>Үндсэн үнэ: ${book.price}₮</p>
+        <p>Үнэ: ${book.price}₮</p>
       </div>
     `).join('')}
   `;
